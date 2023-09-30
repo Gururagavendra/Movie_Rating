@@ -4,7 +4,7 @@ import search from "../search.svg";
 const Content = () => {
   const [newmovie, setMovie] = useState([]);
   const [text, setMovieText] = useState("");
-  const apikey = "http://www.omdbapi.com/?i=tt3896198&apikey=9bdbab58";
+  const apikey = "https://www.omdbapi.com/?i=tt3896198&apikey=9bdbab58";
   const getmovies = async (title) => {
     const response = await fetch(`${apikey}&s=${title}`);
     const data = await response.json();
