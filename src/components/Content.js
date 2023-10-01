@@ -4,7 +4,7 @@ import search from "../search.svg";
 const Content = () => {
   const [newmovie, setMovie] = useState([]);
   const [text, setMovieText] = useState("");
-  const apikey = "https://www.omdbapi.com/?i=tt3896198&apikey=9bdbab58";
+  const apikey = "https://www.omdbapi.com/?apikey=9bdbab58";
   const getmovies = async (title) => {
     const response = await fetch(`${apikey}&s=${title}`);
     const data = await response.json();
@@ -12,23 +12,24 @@ const Content = () => {
   };
 
   useEffect(() => {
-    getmovies(text);
+    Seacrhmovie();
   }, [text]);
+  const Seacrhmovie = () => {
+    getmovies(text);
+  };
+
   return (
     <>
       <div className="searchbar">
         <input
           className="search"
           value={text}
-          onChange={(e) => setMovieText(e.target.value)}
+          onChange={(e) => {
+            setMovieText(e.target.value);
+          }}
           placeholder="Enter the Movie Name..."
         />
-        <img
-          className="icon"
-          onClick={() => getmovies(text)}
-          src={search}
-          alt="icon"
-        />
+        <img className="icon" onClick={Seacrhmovie} src={search} alt="icon" />
       </div>
       <div className="flex">
         {newmovie?.length > 0 ? (
