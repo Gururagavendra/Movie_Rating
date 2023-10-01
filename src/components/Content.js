@@ -3,7 +3,7 @@ import Movie from "./Main/Movie";
 import search from "../search.svg";
 const Content = () => {
   const [newmovie, setMovie] = useState([]);
-  const [text, setMovieText] = useState("Batman");
+  const [text, setMovieText] = useState("");
   const apikey = "https://www.omdbapi.com/?apikey=9bdbab58";
   const getmovies = async (title) => {
     const response = await fetch(`${apikey}&s=${title}`);
