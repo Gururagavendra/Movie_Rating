@@ -12,8 +12,8 @@ const Content = () => {
   };
 
   useEffect(() => {
-    getmovies("batman");
-  }, []);
+    getmovies(text);
+  }, [text]);
   return (
     <>
       <div className="searchbar">
