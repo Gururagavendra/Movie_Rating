@@ -31,6 +31,11 @@ const Content = () => {
         />
         <img className="icon" onClick={Seacrhmovie} src={search} alt="icon" />
       </div>
+          <div>
+        <p className="instruct">
+          Please enter the movie name and click the search icon
+        </p>
+      </div>
       <div className="flex">
         {newmovie?.length > 0 ? (
           <div className="Movie-section">
