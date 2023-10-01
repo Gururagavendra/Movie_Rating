@@ -3,7 +3,7 @@ import Movie from "./Main/Movie";
 import search from "../search.svg";
 const Content = () => {
   const [newmovie, setMovie] = useState([]);
-  const [text, setMovieText] = useState("");
+  const [text, setMovieText] = useState("Batman");
   const apikey = "https://www.omdbapi.com/?apikey=9bdbab58";
   const getmovies = async (title) => {
     const response = await fetch(`${apikey}&s=${title}`);
@@ -12,7 +12,6 @@ const Content = () => {
   };
 
   useEffect(() => {
-    getmovies("Superman");
     Seacrhmovie();
   }, [text]);
   const Seacrhmovie = () => {
@@ -40,7 +39,9 @@ const Content = () => {
             ))}
           </div>
         ) : (
-          <div style={{ color: "white" }}>No</div>
+          <div>
+            <p className="nomovies">Seacrh Movies Now</p>
+          </div>
         )}
       </div>
     </>
