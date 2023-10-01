@@ -39,7 +39,7 @@ const Content = () => {
             ))}
           </div>
         ) : (
-          <div style={{ color: "white" }}>No</div>
+          <div style={{ color: "white" }}>{getmovies("Batman")}</div>
         )}
       </div>
     </>
