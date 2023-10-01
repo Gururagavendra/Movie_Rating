@@ -12,6 +12,7 @@ const Content = () => {
   };
 
   useEffect(() => {
+    getmovies("Superman");
     Seacrhmovie();
   }, [text]);
   const Seacrhmovie = () => {
@@ -39,7 +40,7 @@ const Content = () => {
             ))}
           </div>
         ) : (
-          <div style={{ color: "white" }}>{getmovies("Batman")}</div>
+          <div style={{ color: "white" }}>No</div>
         )}
       </div>
     </>
